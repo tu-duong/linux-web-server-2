@@ -28,23 +28,23 @@ These packages can be installed by using the command: sudo apt-get install <pack
 * configure ufw firewall, default block all incoming and allow all outgoing, enable required ports (2200, 80, 123, 22 - 22 to be removed later). Update Port 2200 at /etc/ssh/sshd_config. Add Port 2200 in Lightsail. Test connection with new Port 2200. If success, delete Port 22 from ufw, sshd_config, and Lightsail console.
 
 * create catalog_wsgi files.
-    $ sudo nano /var/www/catalog/catalog.wsgi
-    #!/usr/bin/python3
-    import sys
-    import logging
-    logging.basicConfig(stream=sys.stderr)
-    sys.path.insert(0, "/var/www/catalog/")
+    * $ sudo nano /var/www/catalog/catalog.wsgi
+    * #!/usr/bin/python3
+    * import sys
+    * import logging
+    * logging.basicConfig(stream=sys.stderr)
+    * sys.path.insert(0, "/var/www/catalog/")
 
-    from project import app as application
-    application.secret_key = 'your_secret_key'
+    * from project import app as application
+    * application.secret_key = 'your_secret_key'
 
 * create, configure, enable catalog.conf file
-   $ sudo nano /etc/apache2/sites-available/catalog.conf
-   Update server name, WSGIScriptAlias, Director (/var/www/catalog)
+    * $ sudo nano /etc/apache2/sites-available/catalog.conf
+    * Update server name, WSGIScriptAlias, Director (/var/www/catalog)
    
 * Link catalog.conf file and restart apache2 server
-   sudo a2ensite catalog.conf
-   sudo service apache2 restart 
+    * sudo a2ensite catalog.conf
+    * sudo service apache2 restart 
 
 ## v. A list of any third-party resources you made use of to complete this project.
 
