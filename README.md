@@ -1,10 +1,9 @@
 # Linux web server configuration
 
 ## i. The IP address and SSH port so your server can be accessed by the reviewer.
-18.234.255.183 port 22
+
 
 ## ii. The complete URL to your hosted web application.
-http://18.234.255.183
 
 ## iii. A summary of software you installed and configuration changes made.
 
